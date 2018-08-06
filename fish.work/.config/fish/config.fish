@@ -5,6 +5,9 @@ if set -q VIRTUAL_ENV
     echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
 end
 
+# Vi Mode
+fish_vi_key_bindings
+
 # Gurobi
 set -g -x GUROBI_HOME /opt/gurobi800/linux64
 set -g -x GUROBI_LIBRARY $GUROBI_HOME/lib
