@@ -5,8 +5,15 @@ if set -q VIRTUAL_ENV
     echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
 end
 
+set PATH /usr/lib/ccache $PATH
+
 # Vi Mode
-fish_vi_key_bindings
+fish_default_key_bindings
+
+# Set Editor
+set -g -x GIT_EDITOR nvim
+set -g -x VISUAL nvim
+set -g -x EDITOR nvim
 
 # Gurobi
 set -g -x GUROBI_HOME /opt/gurobi800/linux64
@@ -25,3 +32,7 @@ set -g -x LD_LIBRARY_PATH $LD_LIBRARY_PATH $CPLEX_HOME/lib
 set -g -x COINCLP_HOME /opt/coin-Clp
 set -g -x COIN_CLP_LIBRARY $COINCLP_HOME/lib
 set -g -x LD_LIBRARY_PATH $LD_LIBRARY_PATH $COINCLP_HOME/lib
+
+# CoinOSI
+set -g -x COIN_OSI_HOME /opt/coin-Clp
+set -g -x LD_LIBRARY_PATH $LD_LIBRARY_PATH $COIN_OSI_HOME/lib
